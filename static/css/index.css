@@ -23,12 +23,12 @@ body{
     margin-top: 200px;
 }
 
-h1{
+.title1{
     font-size: 7em;
     font-family: "Shadows into Light", sans-serif;
 }
 
-h2{
+.title2{
     margin-top: -17px;
     font-family: "Source Sans Pro", sans-serif;
     font-size: 1.7em;
@@ -54,19 +54,24 @@ h2{
     }
 }
 
+.subtitle1{
+    padding-bottom: -400px;
+}
+
 /*  Carousel */
 
-.carousel{
-    width: 100vw;
-    height: 100vw;
-    margin-top: -50px;
+.carousel {
+    width: 80vw; /* Reduce el ancho del carrusel */
+    height: 40vw; /* Reduce el alto del carrusel */
+    margin: 20px auto; /* Centra el carrusel horizontalmente */
     overflow: hidden;
     position: relative;
+    border-radius: 15px; /* Opcional: añade bordes redondeados */
 }
 
 .carousel .list .item{
     width: 180px;
-    height: 250px;
+    height: 110px;
     position: absolute;
     top: 80%;
     transform: translateY(-70%);
@@ -202,61 +207,36 @@ h2{
 
 /*  CARRUSEL  */
 
-.arrows{
+.arrows {
     position: absolute;
-    top: 80%;
-    right: 52%;
-    z-index: 100;
-    width: 300px;
-    max-width: 30%;
+    top: 50%; /* Centra los botones verticalmente */
+    left: 0;
+    width: 100%; /* Extiende los botones a todo el ancho del carrusel */
     display: flex;
-    gap: 10px;
-    align-items: center;
+    justify-content: space-between; /* Coloca los botones a los lados */
+    transform: translateY(-50%);
+    z-index: 100; /* Asegúrate de que los botones estén sobre las imágenes */
 }
 
-.arrows button{
+.arrows button {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    background-color: #14ff72cb;
-    color: #fff;
+    background-color: #949494cb; /* Color de fondo */
+    color: #fff; /* Color del texto */
     border: none;
-    outline: none;
-    font-size: 16px;
-    font-family: monospace;
-    font-weight: bold;
-    transition: .5s;
+    border-radius: 50%; /* Forma redonda */
     cursor: pointer;
+    font-size: 18px; /* Ajusta el tamaño del texto */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para visibilidad */
+    transition: background-color 0.3s ease;
 }
 
-.arrows button:hover{
-    background: #fff;
+.arrows button:hover {
+    background-color: #fff; /* Color al pasar el ratón */
     color: #000;
 }
 
-
-/**/
-
-
-/*  TimeRunnig  */
-
-.carousel .timeRunning{
-    position: absolute;
-    z-index: 1000;
-    width: 0%;
-    height: 4px;
-    background-color: #14ff72cb;
-    left: 0;
-    top: 0;
-    animation: runningTime 7s linear 1 forwards;
-}
-
-@keyframes runningTime {
-    
-    from{width: 0%;}
-    to{width: 100%;}
-
-}
 
 /**/
 
@@ -303,3 +283,107 @@ h2{
 }
 
 /**/
+
+/* Estilos para el contenedor general de las burbujas */
+.bubble-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f9f9f9;
+    overflow: hidden; /* Evitar que se vean elementos fuera del contenedor */
+    z-index: 1; /* Asegurar que esté debajo de otros elementos si es necesario */
+}
+
+/* Estilos para la burbuja principal */
+.bubble.main {
+    width: 150px;
+    height: 150px;
+    background-color: #007bff; /* Color de fondo de la burbuja principal */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Color del texto */
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 2; /* Asegura que esté por encima de las burbujas pequeñas */
+}
+
+/* Estilos generales para las burbujas pequeñas */
+.bubble.small {
+    width: 100px;
+    height: 100px;
+    background-color: #6c757d; /* Color de fondo de las burbujas pequeñas */
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Color del texto */
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* Animación suave al cambiar posiciones */
+}
+
+/* Posición de las burbujas pequeñas alrededor de la burbuja principal */
+.bubble.small:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
+}
+
+.bubble.small:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(60deg) translate(200px) rotate(-60deg);
+}
+
+.bubble.small:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(120deg) translate(200px) rotate(-120deg);
+}
+
+.bubble.small:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(180deg) translate(200px) rotate(-180deg);
+}
+
+.bubble.small:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(240deg) translate(200px) rotate(-240deg);
+}
+
+.bubble.small:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(300deg) translate(200px) rotate(-300deg);
+}
+
+/* Estilos para el slider */
+.carousel {
+    position: relative;
+    z-index: 2; /* Por encima del fondo pero detrás de las burbujas */
+}
+
+/* Diseño responsivo */
+@media only screen and (max-width: 540px) {
+    .bubble-container {
+        height: auto;
+    }
+
+    .bubble.main {
+        width: 120px;
+        height: 120px;
+        font-size: 14px;
+    }
+
+    .bubble.small {
+        width: 60px;
+        height: 60px;
+        font-size: 12px;
+    }
+
+    /* Ajustar la distancia entre burbujas en pantallas pequeñas */
+    .bubble.small:nth-child(2),
+    .bubble.small:nth-child(3),
+    .bubble.small:nth-child(4),
+    .bubble.small:nth-child(5),
+    .bubble.small:nth-child(6),
+    .bubble.small:nth-child(7) {
+        transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
+    }
+}
