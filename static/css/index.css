@@ -1,7 +1,8 @@
-*{
+/**{
     margin: 0;
     height: 100%;
 }
+*/
 body{
     width: 100%;
 }
@@ -292,7 +293,7 @@ body{
     align-items: center;
     height: 50vh;
     background-color: #f9f9f9;
-    overflow: hidden; /* Evitar que se vean elementos fuera del contenedor */
+    overflow: visible;
     z-index: 1; /* Asegurar que esté debajo de otros elementos si es necesario */
 }
 
@@ -385,5 +386,13 @@ body{
     .bubble.small:nth-child(6),
     .bubble.small:nth-child(7) {
         transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
+    }
+    .cuadrado {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db; /* Color azul */
+        margin: 20px auto; /* Centrado horizontal con margen superior/inferior */
+        position: static;
+        z-index: auto;
     }
 }
