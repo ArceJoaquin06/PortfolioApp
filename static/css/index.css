@@ -285,114 +285,189 @@ body{
 
 /**/
 
-/* Estilos para el contenedor general de las burbujas */
-.bubble-container {
+
+.cuadrado {
+    width: 400px;
+    height: 400px;
+    background-color: #3498db; /* Color azul */
+    margin: 20px auto; /* Centrado horizontal con margen superior/inferior */
+    z-index: auto;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    background-color: #f9f9f9;
-    overflow: visible;
-    z-index: 1; /* Asegurar que esté debajo de otros elementos si es necesario */
 }
 
-/* Estilos para la burbuja principal */
-.bubble.main {
-    width: 150px;
-    height: 150px;
-    background-color: #007bff; /* Color de fondo de la burbuja principal */
+.circulo1{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: 50%; /* 50% de la altura del cuadrado */
+    left: 50%; /* 50% de la anchura del cuadrado */
+    transform: translate(-50%, -50%); /* Ajusta la posición para centrar el círculo */
+    background: #fff;
+    z-index: 10000;
     border-radius: 50%;
-    position: relative;
-    display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
-    color: #fff; /* Color del texto */
-    font-size: 16px;
-    font-weight: bold;
-    z-index: 2; /* Asegura que esté por encima de las burbujas pequeñas */
 }
 
-/* Estilos generales para las burbujas pequeñas */
-.bubble.small {
+.circulo2{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 65px;
+    left: 65px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circulo3{
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    top: 50px;
+    right: 45px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.circulo4{
+    position: absolute;
     width: 100px;
     height: 100px;
-    background-color: #6c757d; /* Color de fondo de las burbujas pequeñas */
+    bottom: 40px;
+    left: 75px;
+    background: #fff;
+    z-index: 10000;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.circulo5{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* Color del texto */
-    font-size: 14px;
-    font-weight: bold;
-    transition: transform 0.3s ease; /* Animación suave al cambiar posiciones */
+    width: 60px;
+    height: 60px;
+    top: 60px;
+    left: 165px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Posición de las burbujas pequeñas alrededor de la burbuja principal */
-.bubble.small:nth-child(2) {
-    transform: translate(-50%, -50%) rotate(0deg) translate(200px) rotate(0deg);
+.circulo6{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    right: 60px;
+    bottom: 170px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.bubble.small:nth-child(3) {
-    transform: translate(-50%, -50%) rotate(60deg) translate(200px) rotate(-60deg);
+.circulo7{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 87px;
+    top: 160px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.bubble.small:nth-child(4) {
-    transform: translate(-50%, -50%) rotate(120deg) translate(200px) rotate(-120deg);
+.circulo8{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 75px;
+    bottom: 145px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.bubble.small:nth-child(5) {
-    transform: translate(-50%, -50%) rotate(180deg) translate(200px) rotate(-180deg);
+.circulo9{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    bottom: 55px;
+    left: 185px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.bubble.small:nth-child(6) {
-    transform: translate(-50%, -50%) rotate(240deg) translate(200px) rotate(-240deg);
+.circulo10{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    bottom: 100px;
+    right: 110px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.bubble.small:nth-child(7) {
-    transform: translate(-50%, -50%) rotate(300deg) translate(200px) rotate(-300deg);
+.circulo11{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    bottom: 130px;
+    right: 85px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Estilos para el slider */
-.carousel {
-    position: relative;
-    z-index: 2; /* Por encima del fondo pero detrás de las burbujas */
+.circulo12{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    bottom: 97px;
+    right: 72px;
+    background: #fff;
+    z-index: 10000;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Diseño responsivo */
-@media only screen and (max-width: 540px) {
-    .bubble-container {
-        height: auto;
-    }
+.imagen1{
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    max-width: 100%;
+    max-height: 100%;
+}
 
-    .bubble.main {
-        width: 120px;
-        height: 120px;
-        font-size: 14px;
-    }
+.imagen2{
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+}
 
-    .bubble.small {
-        width: 60px;
-        height: 60px;
-        font-size: 12px;
-    }
+.imagen3{
+    position: absolute;
+    top: 5px;
+    left: 13px;
+    width: 35px;
+    height: 40px;
+}
 
-    /* Ajustar la distancia entre burbujas en pantallas pequeñas */
-    .bubble.small:nth-child(2),
-    .bubble.small:nth-child(3),
-    .bubble.small:nth-child(4),
-    .bubble.small:nth-child(5),
-    .bubble.small:nth-child(6),
-    .bubble.small:nth-child(7) {
-        transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg);
-    }
-    .cuadrado {
-        width: 200px;
-        height: 200px;
-        background-color: #3498db; /* Color azul */
-        margin: 20px auto; /* Centrado horizontal con margen superior/inferior */
-        position: static;
-        z-index: auto;
-    }
+.imagen4{
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    width: 50px;
+    height: 45px;
 }
