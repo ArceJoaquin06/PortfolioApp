@@ -64,10 +64,21 @@ def login():
 
     return render_template('login.html', form=form)
 
+class Contact:
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
 
 @app.route('/')
 def principal():
-    return render_template('index.html')
+    contact_list = [
+        Contact(name="Gmail", url="mailto:arcejoaquin06@gmail.com"),
+        Contact(name="Github", url="https://github.com/ArceJoaquin06"),
+        Contact(name="Linkedin", url="https://github.com/ArceJoaquin06"),
+        Contact(name="Instagram", url="https://www.instagram.com/")
+    ]
+
+    return render_template('index.html', contacts=contact_list)
 
 if __name__ == '__main__':
     app.run(debug=True, port=3500)

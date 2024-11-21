@@ -4,133 +4,123 @@
 
 {% block extra_head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 {% endblock %}
 
 {% block body %}
 <body>
-    <div class="img-container">
-        <div class="inner-container">
-            <h1 class="title1">Hero image sample</h1>
-            <h2 class="title2">jiodhvsdvhsibhbbbbbo</h2>
+    <!-- Contenedor del Perfil -->
+    <div class="container profile-container">
+        <div class="profile-picture">
+            <img src="static\img\fotocarnet.jpg" alt="Foto de perfil">
+        </div>
+        <div class="profile-info">
+            <h1>Joaquín Arce</h1>
+            <p class="role">Full Stack Developer</p>
+            <p class="location">Argentina</p>
+        </div>
+        <div class="profile-options">
+            {% for contact in contacts %}
+                <a href="{{ contact.url }}" target="_blank" class="social-icon">
+                    {% if contact.name == 'Github' %}
+                        <i class="fab fa-github" id="contacts"></i>
+                    {% elif contact.name == 'Linkedin' %}
+                        <i class="fa-brands fa-linkedin"></i>
+                    {% elif contact.name == 'Instagram' %}
+                        <i class="fa-brands fa-instagram"></i>
+                    {% else %}
+                        <i class="fa-regular fa-envelope" id="contacts"></i>
+                    {% endif %}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+    <!-- Contenedor principal para columnas -->
+    <div class="container-columns">
+        <!-- Contenedor de "Sobre mí" -->
+        <div class="container about-container">
+            <h2>Sobre mí</h2>
+            <p>Actualmente soy estudiante técnico de programación en el secundario. Dentro de poco me egreso y me gustaría empezar a tener algo de experiencia laboral. Tengo algo de práctica desarrollando varias páginas y proyectos dentro de las distintas ramas de la especialización de programación.</p>
+        </div>
+
+        <!-- Contenedor de "Historia laboral" -->
+        <div class="container work-history-container">
+            <h2>Historia laboral</h2>
+            <p>Actualmente carezco de experiencia laboral, es por eso que me siento motivado y dispuesto a empezar una carrera profesional. Considero que mi nivel académico me proporciona la seguridad, los conocimientos y las habilidades necesarias para afrontar cualquier desafío que se me presente.</p>
         </div>
     </div>
 
     <h1 class="subtitle1">Mis Proyectos</h1>
     <div class="carousel">
         <div class="list">
-            <div class="item" style="background-image: url(../static/img/ardilla.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">ARDILLA</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+          <!-- Slide 1 con mini carrusel -->
+          <div class="item">
+            <div id="miniCarousel1" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="static\img\Proy1_img1.PNG" class="d-block w-100" alt="...">
                 </div>
-            </div>
-            <div class="item" style="background-image: url(../static/img/conejo.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">CONEJO</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+                <div class="carousel-item">
+                  <img src="static\img\Proy1_img2.PNG" class="d-block w-100" alt="...">
                 </div>
-            </div>
-            <div class="item" style="background-image: url(../static/img/erizo.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">ERIZO</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+                <div class="carousel-item">
+                  <img src="static\img\Proy1_img3.PNG" class="d-block w-100" alt="...">
                 </div>
+              </div>
+              <!-- Botones para el mini carrusel -->
+              <button class="carousel-control-prev mini-carousel-prev" type="button">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next mini-carousel-next" type="button">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="item" style="background-image: url(../static/img/perro.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">PERRO</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+          </div>
+      
+          <!-- Slide 2 con mini carrusel -->
+          <div class="item">
+            <div id="miniCarousel2" class="carousel slide carousel-fade">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="static\img\ardilla.jpg" class="d-block w-100" alt="...">
                 </div>
-            </div>
-            <div class="item" style="background-image: url(../static/img/conejo2.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">CONEJO2</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+                <div class="carousel-item">
+                  <img src="static\img\conejo.jpg" class="d-block w-100" alt="...">
                 </div>
-            </div>
-            <div class="item" style="background-image: url(../static/img/erizo2.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">ERIZO2</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
+                <div class="carousel-item">
+                  <img src="static\img\erizo.jpg" class="d-block w-100" alt="...">
                 </div>
+              </div>
+              <!-- Botones para el mini carrusel -->
+              <button class="carousel-control-prev mini-carousel-prev" type="button">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next mini-carousel-next" type="button">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="item" style="background-image: url(../static/img/perro2.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">PERRO2</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="item" style="background-image: url(../static/img/ardilla2.jpg);">
-                <div class="content">
-                    <div class="title">SLIDER</div>
-                    <div class="name">ARDILLA2</div>
-                    <div class="des">esta es una descripciòn breve de mi work, ahora estoy escribiendo para alargar la desc</div>
-                    <div class="btn">
-                        <button>See More</button>
-                    </div>
-                </div>
-            </div>
+          </div>
+      
+          <!-- Más slides -->
         </div>
-
+      
         <div class="arrows">
-            <button class="prev"><</button>
-            <button class="next">></button>
+          <button class="prev"><</button>
+          <button class="next">></button>
         </div>
-
-        <div class="timeRunning"></div>
+      </div>
     </div>
 
-    <div class="bubble-container">
-        <div class="bubble main">
-            <img src="https://via.placeholder.com/150" alt="Main Bubble">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 1">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 2">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 3">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 4">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 5">
-        </div>
-        <div class="bubble small">
-            <img src="https://via.placeholder.com/80" alt="Small Bubble 6">
-        </div>
-    </div>
+    <h1 class="subtitle1">Tecnologías</h1>
+    <h2 class="subtitle2">"En este gráfico pueden verse todas las tecnologías con las que a mi parecer puedo desempeñarme de manera sencilla, 
+            en donde se incluye tanto BackEnd, como FrontEnd y Base de Datos. 
+            El tamaño de los circulos no es proporcional al conocimiento sino que sirve para comparar que tanto que sé de uno a comparación del otro"</h2>
 
     <div class="cuadrado">
         <div class="circulo1">
@@ -152,22 +142,22 @@
             <img class="imagen4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1280px-Bootstrap_logo.svg.png">
         </div>
         <div class="circulo7">
-
+            <img class="imagen6" src="https://seeklogo.com/images/R/react-logo-65B7CD91B5-seeklogo.com.png">
         </div>
         <div class="circulo8">
-
+            <img class="imagen5" src="https://pngimg.com/uploads/mysql/small/mysql_PNG23.png">
         </div>
         <div class="circulo9">
             <img class="imagen2" src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png"> 
         </div>
         <div class="circulo10">
-
+            <img class="imagen8" src="https://repository-images.githubusercontent.com/526059764/b9ca6ebc-a8e3-47e2-8243-d8fa77c79752">
         </div>
         <div class="circulo11">
-
+            <img class="imagen7" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png">
         </div>
         <div class="circulo12">
-
+            <img class="imagen2" src="https://www.javacodegeeks.com/wp-content/uploads/2018/12/3-300x300.png"> 
         </div>
     </div>
 
